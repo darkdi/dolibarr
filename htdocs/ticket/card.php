@@ -1522,7 +1522,7 @@ if ($action == 'create' || $action == 'presend') {
 				}
 
 				// Re-open ticket
-				if ($permissiontomanage && !$user->socid && (isset($object->status) && ($object->status == Ticket::STATUS_CLOSED || $object->status == Ticket::STATUS_CANCELED)) && !$user->socid) {
+				if ($permissiontomanage && !$user->socid && (isset($object->status) && ($object->status == Ticket::STATUS_CLOSED || $object->status == Ticket::STATUS_CANCELED))) {
 					print dolGetButtonAction('', $langs->trans('ReOpen'), 'default', $_SERVER["PHP_SELF"].'?action=reopen&token='.newToken().'&track_id='.$object->track_id, '');
 				}
 
